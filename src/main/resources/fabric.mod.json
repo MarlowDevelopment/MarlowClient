@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "marlowclient",
+  "version": "${version}",
+  "name": "MarlowClient",
+  "description": "",
+  "authors": [
+    "Marlowww"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.mommymarlow.marlowclient.client.MarlowClient"
+    ],
+    "main": [
+      "net.mommymarlow.marlowclient.Marlow"
+    ]
+  },
+  "mixins": [
+    "marlowclient.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.14",
+    "fabric": "*",
+    "minecraft": "1.19.3"
+  }
+}

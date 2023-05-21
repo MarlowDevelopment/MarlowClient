@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.mommymarlow.marlowclient.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "LivingEntityMixin",
+    "MinecraftClientMixin",
+    "PlayerEntityMixin",
+    "AbstractClientPlayerEntityMixin",
+    "ChatHudMixin",
+    "ClientConnectionMixin",
+    "ClientPlayerEntityMixin",
+    "ClientPlayNetworkHandlerMixin",
+    "ClientWorldMixin",
+    "EntityRendererMixin",
+    "GameRendererMixin",
+    "InGameHudMixin",
+    "KeyboardMixin",
+    "LightmapTextureManagerMixin",
+    "RenderTickCounterMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "TextVisitFactoryMixin"
+  ]
+}
