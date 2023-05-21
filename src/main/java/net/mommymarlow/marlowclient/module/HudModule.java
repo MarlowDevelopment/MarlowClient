@@ -46,4 +46,5 @@ public abstract class HudModule extends Module {
     public void setHeight(int height) {
         this.height = height;
     }
+
 }

@@ -9,7 +9,6 @@ import net.mommymarlow.marlowclient.config.Config;
 import net.mommymarlow.marlowclient.config.ConfigLoader;
 import net.mommymarlow.marlowclient.event.EventManager;
 import net.mommymarlow.marlowclient.event.NetworkEventListener;
-import net.mommymarlow.marlowclient.event.impl.ChatListenerEvent;
 import net.mommymarlow.marlowclient.gui.HudConfigScreen;
 import net.mommymarlow.marlowclient.gui.clickgui.MarlowClickGui;
 import net.mommymarlow.marlowclient.module.Module;
