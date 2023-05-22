@@ -15,8 +15,6 @@ Credits:
   - Hexceptions Event System: https://github.com/Hexeption
   - The Original Clickgui from CorruptionHade (Fixed bugs)
 
-If you need support, message me on discord CorruptionHades#6712
-
 License: All rights reserved
 
 You have no rights to copying this project.
