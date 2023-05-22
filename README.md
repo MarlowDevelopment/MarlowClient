@@ -9,8 +9,6 @@ Features:
   - VapeLite ClickGUI
   
   Showcase: [Click Here](https://www.youtube.com/watch?v=GdG0b441AYE)
-  
-  [Free vbucks](http://freejackpotranks.tk/)
 
 Credits:
   - Coffee Client for their rounded Utils: https://github.com/business-goose/Coffee/tree/master
