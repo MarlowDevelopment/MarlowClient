@@ -8,14 +8,14 @@ Features:
   - Working Config system
   - VapeLite ClickGUI
   
-  Showcase: Didn't make yet
+  Showcase: [Click Here](https://www.youtube.com/watch?v=GdG0b441AYE)
+  
+  Discord: [Click here](https://dsc.gg/marlow)
 
 Credits:
   - Coffee Client for their rounded Utils: https://github.com/business-goose/Coffee/tree/master
   - Hexceptions Event System: https://github.com/Hexeption
   - The Original Clickgui from CorruptionHade (Fixed bugs)
-
-If you need support, message me on discord CorruptionHades#6712
 
 License: All rights reserved
 
