@@ -9,6 +9,8 @@ Features:
   - VapeLite ClickGUI
   
   Showcase: [Click Here](https://www.youtube.com/watch?v=GdG0b441AYE)
+  
+  Discord: [Click here](https://dsc.gg/marlow)
 
 Credits:
   - Coffee Client for their rounded Utils: https://github.com/business-goose/Coffee/tree/master
