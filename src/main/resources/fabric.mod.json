@@ -10,6 +10,7 @@
   "contact": {},
   "license": "MIT",
   "environment": "*",
+  "icon": "assets/marlowclient/icon.png",
   "entrypoints": {
     "client": [
       "net.mommymarlow.marlowclient.client.MarlowClient"

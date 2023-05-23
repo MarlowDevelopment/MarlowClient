@@ -13,6 +13,7 @@ import net.mommymarlow.marlowclient.gui.HudConfigScreen;
 import net.mommymarlow.marlowclient.gui.clickgui.MarlowClickGui;
 import net.mommymarlow.marlowclient.module.Module;
 import net.mommymarlow.marlowclient.module.ModuleManager;
+import net.mommymarlow.marlowclient.utils.AutoUpdate;
 import net.mommymarlow.marlowclient.utils.Theme;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
@@ -72,6 +73,8 @@ public class Marlow implements ModInitializer {
     @Override
     public void onInitialize() {
         eventManager = EventManager.INSTANCE;
+
+        AutoUpdate.doUpdate();
 
         //system.addListener(new ChatListenerEvent());
         system.addListener(new NetworkEventListener());

@@ -11,8 +11,10 @@ import java.net.URLConnection;
 
 public class AutoUpdate {
 
-    private static final String VERSION_FILE_URL = "https://raw.githubusercontent.com/Dino-log/MarlowClientFiles/main/version";
-    private static final String MOD_UPDATE_URL = "https://github.com/Dino-log/MarlowClientFiles/raw/main/MarlowClient-"+getLatestVersion()+".jar";
+    private static final String VERSION_FILE_URL = "https://raw.githubusercontent.com/MarlowDevelopment/MarlowClient/master/version";
+    private static final String MOD_UPDATE_URL = "https://github.com/MarlowDevelopment/MarlowClient/releases/download/latest/MarlowClient-latest.jar";
+
+    private static final String FEATHER_PATH = System.getProperty("user.home")+"/AppData/Roaming/.feather/user-mods/1.19.3-fabric/MarlowClient-\"+getCurrentVersion()+\".jar";
 
     private static final String MOD_FILE_PATH = FabricLoader.getInstance().getGameDir() + "/mods/MarlowClient-"+getCurrentVersion()+".jar";
 
@@ -30,6 +32,11 @@ public class AutoUpdate {
 
      */
 
+
+    private static String getFeatherOrNormal(){
+
+        return null;
+    }
 
     private static String getCurrentVersion() {
         // Retrieve the current mod version from a local file or another source
@@ -68,6 +75,15 @@ public class AutoUpdate {
         URL url = new URL(MOD_UPDATE_URL);
         try (BufferedInputStream inputStream = new BufferedInputStream(url.openStream());
              FileOutputStream fileOutputStream = new FileOutputStream(MOD_FILE_PATH)) {
+            byte[] dataBuffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(dataBuffer, 0, 1024)) != -1) {
+                fileOutputStream.write(dataBuffer, 0, bytesRead);
+            }
+        }
+        URL url2 = new URL(MOD_UPDATE_URL);
+        try (BufferedInputStream inputStream = new BufferedInputStream(url2.openStream());
+             FileOutputStream fileOutputStream = new FileOutputStream(FEATHER_PATH)) {
             byte[] dataBuffer = new byte[1024];
             int bytesRead;
             while ((bytesRead = inputStream.read(dataBuffer, 0, 1024)) != -1) {
