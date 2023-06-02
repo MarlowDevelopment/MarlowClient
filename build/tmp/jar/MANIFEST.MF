@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+main-class: net.mommymarlow.marlowclient.Marlow
+

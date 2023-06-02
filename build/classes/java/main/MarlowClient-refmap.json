@@ -1,0 +1,136 @@
+{
+  "mappings": {
+    "net/mommymarlow/marlowclient/mixin/AbstractClientPlayerEntityMixin": {
+      "getCapeTexture": "Lnet/minecraft/class_742;method_3119()Lnet/minecraft/class_2960;"
+    },
+    "net/mommymarlow/marlowclient/mixin/ChatHudMixin": {
+      "addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;ILnet/minecraft/client/gui/hud/MessageIndicator;Z)V": "Lnet/minecraft/class_338;method_1815(Lnet/minecraft/class_2561;Lnet/minecraft/class_7469;ILnet/minecraft/class_7591;Z)V"
+    },
+    "net/mommymarlow/marlowclient/mixin/ChatInputSuggestorMixin": {
+      "refresh": "Lnet/minecraft/class_4717;method_23934()V"
+    },
+    "net/mommymarlow/marlowclient/mixin/ClientConnectionMixin": {
+      "send(Lnet/minecraft/network/Packet;Lnet/minecraft/network/PacketCallbacks;)V": "Lnet/minecraft/class_2535;method_10752(Lnet/minecraft/class_2596;Lnet/minecraft/class_7648;)V"
+    },
+    "net/mommymarlow/marlowclient/mixin/ClientPlayNetworkHandlerMixin": {
+      "onCommandSuggestions": "Lnet/minecraft/class_634;method_11081(Lnet/minecraft/class_2639;)V",
+      "sendChatMessage": "Lnet/minecraft/class_634;method_45729(Ljava/lang/String;)V"
+    },
+    "net/mommymarlow/marlowclient/mixin/ClientPlayerEntityMixin": {
+      "Lnet/minecraft/client/network/AbstractClientPlayerEntity;tick()V": "Lnet/minecraft/class_742;method_5773()V",
+      "move": "Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V",
+      "swingHand": "Lnet/minecraft/class_746;method_6104(Lnet/minecraft/class_1268;)V",
+      "tick()V": "Lnet/minecraft/class_746;method_5773()V"
+    },
+    "net/mommymarlow/marlowclient/mixin/ClientWorldMixin": {
+      "Lnet/minecraft/entity/Entity;onRemoved()V": "Lnet/minecraft/class_1297;method_36209()V",
+      "addEntity": "Lnet/minecraft/class_638;method_2942(ILnet/minecraft/class_1297;)V",
+      "removeEntity": "Lnet/minecraft/class_638;method_2945(ILnet/minecraft/class_1297$class_5529;)V"
+    },
+    "net/mommymarlow/marlowclient/mixin/EntityRendererMixin": {
+      "Lnet/minecraft/client/font/TextRenderer;draw(Lnet/minecraft/text/Text;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/render/VertexConsumerProvider;ZII)I": "Lnet/minecraft/class_327;method_30882(Lnet/minecraft/class_2561;FFIZLorg/joml/Matrix4f;Lnet/minecraft/class_4597;ZII)I",
+      "renderLabelIfPresent": "Lnet/minecraft/class_897;method_3926(Lnet/minecraft/class_1297;Lnet/minecraft/class_2561;Lnet/minecraft/class_4587;Lnet/minecraft/class_4597;I)V"
+    },
+    "net/mommymarlow/marlowclient/mixin/GameRendererMixin": {
+      "bobViewWhenHurt": "Lnet/minecraft/class_757;method_3198(Lnet/minecraft/class_4587;F)V"
+    },
+    "net/mommymarlow/marlowclient/mixin/InGameHudMixin": {
+      "render": "Lnet/minecraft/class_329;method_1753(Lnet/minecraft/class_4587;F)V"
+    },
+    "net/mommymarlow/marlowclient/mixin/KeyboardMixin": {
+      "onKey": "Lnet/minecraft/class_309;method_1466(JIIII)V"
+    },
+    "net/mommymarlow/marlowclient/mixin/LightmapTextureManagerMixin": {
+      "getBrightness": "Lnet/minecraft/class_765;method_23284(Lnet/minecraft/class_2874;I)F"
+    },
+    "net/mommymarlow/marlowclient/mixin/LivingEntityMixin": {
+      "getHandSwingDuration": "Lnet/minecraft/class_1309;method_6028()I"
+    },
+    "net/mommymarlow/marlowclient/mixin/MinecraftClientMixin": {
+      "doItemUse": "Lnet/minecraft/class_310;method_1583()V",
+      "setScreen": "Lnet/minecraft/class_310;method_1507(Lnet/minecraft/class_437;)V",
+      "tick": "Lnet/minecraft/class_310;method_1574()V",
+      "updateWindowTitle()V": "Lnet/minecraft/class_310;method_24288()V"
+    },
+    "net/mommymarlow/marlowclient/mixin/PlayerEntityMixin": {
+      "attack": "Lnet/minecraft/class_1657;method_7324(Lnet/minecraft/class_1297;)V",
+      "getAttackCooldownProgress": "Lnet/minecraft/class_1657;method_7261(F)F"
+    },
+    "net/mommymarlow/marlowclient/mixin/RenderTickCounterMixin": {
+      "Lnet/minecraft/client/render/RenderTickCounter;prevTimeMillis:J": "Lnet/minecraft/class_317;field_1971:J",
+      "beginRenderTick": "Lnet/minecraft/class_317;method_1658(J)I"
+    },
+    "net/mommymarlow/marlowclient/mixin/TextVisitFactoryMixin": {
+      "Lnet/minecraft/text/TextVisitFactory;visitFormatted(Ljava/lang/String;ILnet/minecraft/text/Style;Lnet/minecraft/text/Style;Lnet/minecraft/text/CharacterVisitor;)Z": "Lnet/minecraft/class_5223;method_27473(Ljava/lang/String;ILnet/minecraft/class_2583;Lnet/minecraft/class_2583;Lnet/minecraft/class_5224;)Z",
+      "visitFormatted(Ljava/lang/String;ILnet/minecraft/text/Style;Lnet/minecraft/text/CharacterVisitor;)Z": "Lnet/minecraft/class_5223;method_27472(Ljava/lang/String;ILnet/minecraft/class_2583;Lnet/minecraft/class_5224;)Z"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "net/mommymarlow/marlowclient/mixin/AbstractClientPlayerEntityMixin": {
+        "getCapeTexture": "Lnet/minecraft/class_742;method_3119()Lnet/minecraft/class_2960;"
+      },
+      "net/mommymarlow/marlowclient/mixin/ChatHudMixin": {
+        "addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;ILnet/minecraft/client/gui/hud/MessageIndicator;Z)V": "Lnet/minecraft/class_338;method_1815(Lnet/minecraft/class_2561;Lnet/minecraft/class_7469;ILnet/minecraft/class_7591;Z)V"
+      },
+      "net/mommymarlow/marlowclient/mixin/ChatInputSuggestorMixin": {
+        "refresh": "Lnet/minecraft/class_4717;method_23934()V"
+      },
+      "net/mommymarlow/marlowclient/mixin/ClientConnectionMixin": {
+        "send(Lnet/minecraft/network/Packet;Lnet/minecraft/network/PacketCallbacks;)V": "Lnet/minecraft/class_2535;method_10752(Lnet/minecraft/class_2596;Lnet/minecraft/class_7648;)V"
+      },
+      "net/mommymarlow/marlowclient/mixin/ClientPlayNetworkHandlerMixin": {
+        "onCommandSuggestions": "Lnet/minecraft/class_634;method_11081(Lnet/minecraft/class_2639;)V",
+        "sendChatMessage": "Lnet/minecraft/class_634;method_45729(Ljava/lang/String;)V"
+      },
+      "net/mommymarlow/marlowclient/mixin/ClientPlayerEntityMixin": {
+        "Lnet/minecraft/client/network/AbstractClientPlayerEntity;tick()V": "Lnet/minecraft/class_742;method_5773()V",
+        "move": "Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V",
+        "swingHand": "Lnet/minecraft/class_746;method_6104(Lnet/minecraft/class_1268;)V",
+        "tick()V": "Lnet/minecraft/class_746;method_5773()V"
+      },
+      "net/mommymarlow/marlowclient/mixin/ClientWorldMixin": {
+        "Lnet/minecraft/entity/Entity;onRemoved()V": "Lnet/minecraft/class_1297;method_36209()V",
+        "addEntity": "Lnet/minecraft/class_638;method_2942(ILnet/minecraft/class_1297;)V",
+        "removeEntity": "Lnet/minecraft/class_638;method_2945(ILnet/minecraft/class_1297$class_5529;)V"
+      },
+      "net/mommymarlow/marlowclient/mixin/EntityRendererMixin": {
+        "Lnet/minecraft/client/font/TextRenderer;draw(Lnet/minecraft/text/Text;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/render/VertexConsumerProvider;ZII)I": "Lnet/minecraft/class_327;method_30882(Lnet/minecraft/class_2561;FFIZLorg/joml/Matrix4f;Lnet/minecraft/class_4597;ZII)I",
+        "renderLabelIfPresent": "Lnet/minecraft/class_897;method_3926(Lnet/minecraft/class_1297;Lnet/minecraft/class_2561;Lnet/minecraft/class_4587;Lnet/minecraft/class_4597;I)V"
+      },
+      "net/mommymarlow/marlowclient/mixin/GameRendererMixin": {
+        "bobViewWhenHurt": "Lnet/minecraft/class_757;method_3198(Lnet/minecraft/class_4587;F)V"
+      },
+      "net/mommymarlow/marlowclient/mixin/InGameHudMixin": {
+        "render": "Lnet/minecraft/class_329;method_1753(Lnet/minecraft/class_4587;F)V"
+      },
+      "net/mommymarlow/marlowclient/mixin/KeyboardMixin": {
+        "onKey": "Lnet/minecraft/class_309;method_1466(JIIII)V"
+      },
+      "net/mommymarlow/marlowclient/mixin/LightmapTextureManagerMixin": {
+        "getBrightness": "Lnet/minecraft/class_765;method_23284(Lnet/minecraft/class_2874;I)F"
+      },
+      "net/mommymarlow/marlowclient/mixin/LivingEntityMixin": {
+        "getHandSwingDuration": "Lnet/minecraft/class_1309;method_6028()I"
+      },
+      "net/mommymarlow/marlowclient/mixin/MinecraftClientMixin": {
+        "doItemUse": "Lnet/minecraft/class_310;method_1583()V",
+        "setScreen": "Lnet/minecraft/class_310;method_1507(Lnet/minecraft/class_437;)V",
+        "tick": "Lnet/minecraft/class_310;method_1574()V",
+        "updateWindowTitle()V": "Lnet/minecraft/class_310;method_24288()V"
+      },
+      "net/mommymarlow/marlowclient/mixin/PlayerEntityMixin": {
+        "attack": "Lnet/minecraft/class_1657;method_7324(Lnet/minecraft/class_1297;)V",
+        "getAttackCooldownProgress": "Lnet/minecraft/class_1657;method_7261(F)F"
+      },
+      "net/mommymarlow/marlowclient/mixin/RenderTickCounterMixin": {
+        "Lnet/minecraft/client/render/RenderTickCounter;prevTimeMillis:J": "Lnet/minecraft/class_317;field_1971:J",
+        "beginRenderTick": "Lnet/minecraft/class_317;method_1658(J)I"
+      },
+      "net/mommymarlow/marlowclient/mixin/TextVisitFactoryMixin": {
+        "Lnet/minecraft/text/TextVisitFactory;visitFormatted(Ljava/lang/String;ILnet/minecraft/text/Style;Lnet/minecraft/text/Style;Lnet/minecraft/text/CharacterVisitor;)Z": "Lnet/minecraft/class_5223;method_27473(Ljava/lang/String;ILnet/minecraft/class_2583;Lnet/minecraft/class_2583;Lnet/minecraft/class_5224;)Z",
+        "visitFormatted(Ljava/lang/String;ILnet/minecraft/text/Style;Lnet/minecraft/text/CharacterVisitor;)Z": "Lnet/minecraft/class_5223;method_27472(Ljava/lang/String;ILnet/minecraft/class_2583;Lnet/minecraft/class_5224;)Z"
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+v1	named	intermediary
+FIELD	net/mommymarlow/marlowclient/mixin/ChatInputSuggestorMixin	Lcom/mojang/brigadier/ParseResults;	parse	field_21610
+FIELD	net/mommymarlow/marlowclient/mixin/ChatInputSuggestorMixin	Lnet/minecraft/client/gui/widget/TextFieldWidget;	textField	field_21599
+FIELD	net/mommymarlow/marlowclient/mixin/ChatInputSuggestorMixin	Lnet/minecraft/client/MinecraftClient;	client	field_21597
+FIELD	net/mommymarlow/marlowclient/mixin/ChatInputSuggestorMixin	Z	completingSuggestions	field_21614
+FIELD	net/mommymarlow/marlowclient/mixin/ChatInputSuggestorMixin	Ljava/util/concurrent/CompletableFuture;	pendingSuggestions	field_21611
+FIELD	net/mommymarlow/marlowclient/mixin/ChatInputSuggestorMixin	Lnet/minecraft/client/gui/screen/ChatInputSuggestor$SuggestionWindow;	window	field_21612
+FIELD	net/mommymarlow/marlowclient/mixin/RenderTickCounterMixin	F	lastFrameDuration	field_1969
+METHOD	net/mommymarlow/marlowclient/mixin/ChatInputSuggestorMixin	()V	showCommandSuggestions	method_23937

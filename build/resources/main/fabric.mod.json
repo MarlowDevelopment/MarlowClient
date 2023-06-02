@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "marlowclient",
+  "version": "1.19.3-0.3",
+  "name": "MarlowClient",
+  "custom": {
+    "fabric-loom:generated": true
+  },
+  "contact": {
+    "website": "https://github.com/MarlowDevelopment/MarlowClient"
+  },
+  "icon": "assets/marlowclient/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.mommymarlow.marlowclient.client.MarlowClient"
+    ],
+    "main": [
+      "net.mommymarlow.marlowclient.Marlow"
+    ]
+  },
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": "1.19.3"
+  },
+  "mixins": [
+    "marlowclient.mixins.json"
+  ],
+  "breaks": {
+    "feather": "*",
+    "wurst": "*"
+  }
+}
