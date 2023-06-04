@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "marlowclient",
-  "version": "1.19.3-0.3",
+  "version": "1.19.3-0.4",
   "name": "MarlowClient",
   "custom": {
     "fabric-loom:generated": true

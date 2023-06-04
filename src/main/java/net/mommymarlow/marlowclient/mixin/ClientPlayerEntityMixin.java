@@ -40,4 +40,6 @@ public class ClientPlayerEntityMixin {
             module.onMotion();
         }
     }
+
+
 }

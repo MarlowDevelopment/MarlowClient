@@ -26,8 +26,10 @@ public class ModuleManager {
         add(new AutoCrystal());
         add(new AutoTotem());
         add(new CrystalOptimizer());
+        add(new SwapShield());
         add(new SwapCrystal());
         add(new SwapObsidian());
+        add(new TriggerBot());
         add(new TotemInvRestock());
 
         //MOVEMENT

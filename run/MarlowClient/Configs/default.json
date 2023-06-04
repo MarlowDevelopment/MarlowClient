@@ -9,9 +9,11 @@
     "enabled": false,
     "key": 0,
     "Modes": "Attack",
+    "Auto (Attack)": false,
+    "Delau (Attack)": 0.0,
     "Break (Attack)": false,
     "PlaceInterval (CW)": 0.0,
-    "BreakInterval (Cw)": 0.0,
+    "BreakInterval (CW)": 0.0,
     "OnRightClick (CW)": false,
     "StopOnKill (CW)": false
   },
@@ -27,6 +29,11 @@
     "Marlow": false,
     "Client": false
   },
+  "SwapShield  ": {
+    "enabled": true,
+    "key": 0,
+    "SwordSlot": 0.0
+  },
   "SwapCrystal  ": {
     "enabled": false,
     "key": 0,
@@ -36,6 +43,11 @@
     "enabled": false,
     "key": 0,
     "SpoofHotbar": false
+  },
+  "TriggerBot  ": {
+    "enabled": false,
+    "key": 0,
+    "Cooldown": 0.0
   },
   "TotemInvRestock  ": {
     "enabled": false,
@@ -52,7 +64,7 @@
   "Sprint  ": {
     "enabled": false,
     "key": 0,
-    "Mode": "Omni"
+    "Mode": "Vanilla"
   },
   "Arraylist  ": {
     "enabled": false,

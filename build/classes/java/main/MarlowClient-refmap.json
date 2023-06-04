@@ -22,6 +22,9 @@
       "swingHand": "Lnet/minecraft/class_746;method_6104(Lnet/minecraft/class_1268;)V",
       "tick()V": "Lnet/minecraft/class_746;method_5773()V"
     },
+    "net/mommymarlow/marlowclient/mixin/ClientPlayerInteractionManagerMixin": {
+      "attackEntity": "Lnet/minecraft/class_636;method_2918(Lnet/minecraft/class_1657;Lnet/minecraft/class_1297;)V"
+    },
     "net/mommymarlow/marlowclient/mixin/ClientWorldMixin": {
       "Lnet/minecraft/entity/Entity;onRemoved()V": "Lnet/minecraft/class_1297;method_36209()V",
       "addEntity": "Lnet/minecraft/class_638;method_2942(ILnet/minecraft/class_1297;)V",
@@ -88,6 +91,9 @@
         "move": "Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V",
         "swingHand": "Lnet/minecraft/class_746;method_6104(Lnet/minecraft/class_1268;)V",
         "tick()V": "Lnet/minecraft/class_746;method_5773()V"
+      },
+      "net/mommymarlow/marlowclient/mixin/ClientPlayerInteractionManagerMixin": {
+        "attackEntity": "Lnet/minecraft/class_636;method_2918(Lnet/minecraft/class_1657;Lnet/minecraft/class_1297;)V"
       },
       "net/mommymarlow/marlowclient/mixin/ClientWorldMixin": {
         "Lnet/minecraft/entity/Entity;onRemoved()V": "Lnet/minecraft/class_1297;method_36209()V",

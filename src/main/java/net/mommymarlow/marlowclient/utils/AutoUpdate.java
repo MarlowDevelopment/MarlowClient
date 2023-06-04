@@ -11,16 +11,15 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
-import static net.mommymarlow.marlowclient.client.MarlowClient.mc;
-import static net.mommymarlow.marlowclient.client.MarlowClient.mc;
+import static net.mommymarlow.marlowclient.client.MarlowClient.*;
 
 public class AutoUpdate {
 
     public static final AutoUpdate INSTANCE = new AutoUpdate();
 
 
-    private static final String VERSION_FILE_URL = "https://raw.githubusercontent.com/MarlowDevelopment/MarlowClient/master/version";
-    private static final String MOD_UPDATE_URL = "https://github.com/MarlowDevelopment/MarlowClient/releases/download/latest/MarlowClient-latest-"+mc.getVersionType()+"-.jar";
+    private static final String VERSION_FILE_URL = "https://raw.githubusercontent.com/MarlowDevelopment/MarlowClient/ver/version";
+    private static final String MOD_UPDATE_URL = "https://github.com/MarlowDevelopment/MarlowClient/releases/download/latest/MarlowClient-latest-"+getGAMEVERSION()+"-.jar";
 
    // private static final String FEATHER_PATH = System.getProperty("user.home")+"/AppData/Roaming/.feather/user-mods/1.19.3-fabric/MarlowClient-\"+getCurrentVersion()+\".jar";
 
@@ -69,10 +68,7 @@ public class AutoUpdate {
             }
             reader.close();
 
-            String latestVserion = content.toString();
-            return latestVserion;
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
+            return content.toString();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -107,8 +103,8 @@ public class AutoUpdate {
         try {
             String curVersion = getCurrentVersion();
             String latVersion = getLatestVersion();
-            int latestVersion = Integer.parseInt(latVersion);
-            int currentVersion = Integer.parseInt(curVersion);
+            double latestVersion = Double.parseDouble(latVersion);
+            double currentVersion = Double.parseDouble(curVersion);
 
             //currentVersion<latestVersion
             //!latVersion.contains(curVersion)

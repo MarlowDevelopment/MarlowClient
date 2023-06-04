@@ -8,7 +8,7 @@ import net.mommymarlow.marlowclient.utils.ColorUtils;
 import net.mommymarlow.marlowclient.utils.PlayerUtils;
 
 public class Sprint extends Module {
-    public ModeSetting mode = new ModeSetting("Mode", "Omni", "Omni", "Vanilla", "Vanilla2");
+    public ModeSetting mode = new ModeSetting("Mode", "Vanilla", "Omni", "Vanilla", "Vanilla2");
 
     public Sprint() {
         super("Sprint  ", "  sprint all the time", Category.MOVEMENT);

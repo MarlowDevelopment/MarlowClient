@@ -36,7 +36,7 @@ public class MarlowClient implements ClientModInitializer {
     public EventManager eventManager;
 
     // Version
-    public static final String VERSION = "0.3";
+    public static final String VERSION = "0.4";
 
     public static final MarlowSystem system = MarlowSystem.INSTANCE;
 
@@ -67,6 +67,8 @@ public class MarlowClient implements ClientModInitializer {
             GLFW.GLFW_KEY_H,
             KEY_CATEGORY
     ));
+
+    public static String GAMEVERSION = "1.19.3";
 
 
     // This method gets called when the mod is loaded
@@ -141,4 +143,7 @@ public class MarlowClient implements ClientModInitializer {
         return prefix;
     }
 
+    public static String getGAMEVERSION() {
+        return GAMEVERSION;
+    }
 }

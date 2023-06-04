@@ -41,9 +41,12 @@ import org.lwjgl.glfw.GLFW;
 public class AutoCrystal extends Module implements Listener {
 
     private final ModeSetting modes = new ModeSetting("Modes", "Attack", "Attack", "CW");
+    public NumberSetting delay = new NumberSetting("Delau (Attack)", 0, 20, 0, 0.1);
+
+    public BooleanSetting auto = new BooleanSetting("Auto (Attack)", false);
     public BooleanSetting breakAlso = new BooleanSetting("Break (Attack)", false);
     public NumberSetting placeInterval = new NumberSetting("PlaceInterval (CW)", 0, 20, 0, 0.1);
-    public NumberSetting breakInterval = new NumberSetting("BreakInterval (Cw)", 0, 20, 0, 0.1);
+    public NumberSetting breakInterval = new NumberSetting("BreakInterval (CW)", 0, 20, 0, 0.1);
     public BooleanSetting activateOnRightClick = new BooleanSetting("OnRightClick (CW)", false);
     public BooleanSetting stopOnKill = new BooleanSetting("StopOnKill (CW)", false);
 
@@ -53,7 +56,7 @@ public class AutoCrystal extends Module implements Listener {
 
     public AutoCrystal() {
         super("AutoCrystal  ", "  AutoCrystals", Category.COMBAT);
-        addSettings(modes, breakAlso, placeInterval, breakInterval, activateOnRightClick, stopOnKill);
+        addSettings(modes,auto,delay, breakAlso, placeInterval, breakInterval, activateOnRightClick, stopOnKill);
     }
 
     @Override
@@ -79,6 +82,8 @@ public class AutoCrystal extends Module implements Listener {
                 .filter(e -> e.squaredDistanceTo(mc.player) < 36)
                 .anyMatch(LivingEntity::isDead);
     }
+
+    int delayCrystal;
 
 
     @EventTarget
@@ -115,13 +120,34 @@ public class AutoCrystal extends Module implements Listener {
                         mc.player.swingHand(Hand.MAIN_HAND);
                 }
             }
+        }else if(modes.isMode("Attack")){
+            if (!auto.isEnabled()) return;
+            if (!InventoryUtils.isHolding(Items.END_CRYSTAL)) return;
+            if (GLFW.glfwGetMouseButton(mc.getWindow().getHandle(), GLFW.GLFW_MOUSE_BUTTON_1) != GLFW.GLFW_PRESS) return;
+            if (mc.crosshairTarget instanceof EntityHitResult hit) {
+                if (hit.getEntity() instanceof EndCrystalEntity || hit.getEntity() instanceof SlimeEntity) {
+                    delayCrystal = delay.getIntValue();
+                    mc.interactionManager.attackEntity(mc.player, hit.getEntity());
+                    mc.player.swingHand(Hand.MAIN_HAND);
+                    CrystalDataTracker.INSTANCE.recordAttack(hit.getEntity());
+                }
+            }
+            if (mc.crosshairTarget instanceof BlockHitResult hit) {
+                BlockPos block = hit.getBlockPos();
+                if (CrystalUtils.canPlaceCrystalServer(block)) {
+                    delayCrystal = delay.getIntValue();
+                    ActionResult result = mc.interactionManager.interactBlock(mc.player, Hand.MAIN_HAND, hit);
+                    if (result.isAccepted() && result.shouldSwingHand())
+                        mc.player.swingHand(Hand.MAIN_HAND);
+                }
+            }
         }
     }
 
 
     @EventTarget
     public void onItemUse(EventItemUse event) {
-        if (modes.isMode("CwCrystal")) {
+        if (modes.isMode("CW")) {
             ItemStack mainHandStack = mc.player.getMainHandStack();
             if (mc.crosshairTarget.getType() == HitResult.Type.BLOCK) {
                 BlockHitResult hit = (BlockHitResult) mc.crosshairTarget;

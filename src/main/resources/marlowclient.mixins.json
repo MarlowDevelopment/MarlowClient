@@ -3,6 +3,7 @@
   "package": "net.mommymarlow.marlowclient.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
+    "ClientPlayerInteractionManagerMixin",
     "ChatInputSuggestorMixin",
     "ClientConnectionMixin",
     "AbstractClientPlayerEntityMixin",
