@@ -11,6 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
+
 import static net.mommymarlow.marlowclient.client.MarlowClient.*;
 
 public class AutoUpdate {

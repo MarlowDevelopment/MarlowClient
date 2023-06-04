@@ -41,7 +41,7 @@ import org.lwjgl.glfw.GLFW;
 public class AutoCrystal extends Module implements Listener {
 
     private final ModeSetting modes = new ModeSetting("Modes", "Attack", "Attack", "CW");
-    public NumberSetting delay = new NumberSetting("Delau (Attack)", 0, 20, 0, 0.1);
+    public NumberSetting delay = new NumberSetting("Delay (Attack)", 0, 20, 0, 0.1);
 
     public BooleanSetting auto = new BooleanSetting("Auto (Attack)", false);
     public BooleanSetting breakAlso = new BooleanSetting("Break (Attack)", false);
@@ -83,7 +83,7 @@ public class AutoCrystal extends Module implements Listener {
                 .anyMatch(LivingEntity::isDead);
     }
 
-    int delayCrystal;
+    double delayCrystal;
 
 
     @EventTarget
@@ -122,11 +122,14 @@ public class AutoCrystal extends Module implements Listener {
             }
         }else if(modes.isMode("Attack")){
             if (!auto.isEnabled()) return;
+            boolean dontCrystal = delayCrystal != 0;
+            if (dontCrystal)
+                crystalBreakClock--;
             if (!InventoryUtils.isHolding(Items.END_CRYSTAL)) return;
             if (GLFW.glfwGetMouseButton(mc.getWindow().getHandle(), GLFW.GLFW_MOUSE_BUTTON_1) != GLFW.GLFW_PRESS) return;
             if (mc.crosshairTarget instanceof EntityHitResult hit) {
-                if (hit.getEntity() instanceof EndCrystalEntity || hit.getEntity() instanceof SlimeEntity) {
-                    delayCrystal = delay.getIntValue();
+                if (!dontCrystal && hit.getEntity() instanceof EndCrystalEntity || !dontCrystal && hit.getEntity() instanceof SlimeEntity) {
+                    delayCrystal = delay.getValue();
                     mc.interactionManager.attackEntity(mc.player, hit.getEntity());
                     mc.player.swingHand(Hand.MAIN_HAND);
                     CrystalDataTracker.INSTANCE.recordAttack(hit.getEntity());
@@ -134,8 +137,8 @@ public class AutoCrystal extends Module implements Listener {
             }
             if (mc.crosshairTarget instanceof BlockHitResult hit) {
                 BlockPos block = hit.getBlockPos();
-                if (CrystalUtils.canPlaceCrystalServer(block)) {
-                    delayCrystal = delay.getIntValue();
+                if (!dontCrystal && CrystalUtils.canPlaceCrystalServer(block)) {
+                    delayCrystal = delay.getValue();
                     ActionResult result = mc.interactionManager.interactBlock(mc.player, Hand.MAIN_HAND, hit);
                     if (result.isAccepted() && result.shouldSwingHand())
                         mc.player.swingHand(Hand.MAIN_HAND);

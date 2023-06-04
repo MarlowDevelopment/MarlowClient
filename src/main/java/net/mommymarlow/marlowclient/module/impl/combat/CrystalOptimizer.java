@@ -5,7 +5,6 @@ import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
-import net.minecraft.network.Packet;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.EntityHitResult;
@@ -58,47 +57,47 @@ public class CrystalOptimizer extends Module implements Listener {
 
     @EventTarget
     public void onPacket(PacketSendEvent e){
-        if (marlow.isEnabled()){
-            if (e.getPacket() instanceof PlayerInteractEntityC2SPacket interactPacket) {
-                interactPacket.handle(new PlayerInteractEntityC2SPacket.Handler() {
-                    @Override
-                    public void interact(Hand hand) {
-                        // N/A
-                    }
+        if (!marlow.isEnabled()) return;
+        if (e.getPacket() instanceof PlayerInteractEntityC2SPacket interactPacket) {
+            interactPacket.handle(new PlayerInteractEntityC2SPacket.Handler() {
+                @Override
+                public void interact(Hand hand) {
+                    // N/A
+                }
 
-                    @Override
-                    public void interactAt(Hand hand, Vec3d pos) {
-                        // N/A
-                    }
+                @Override
+                public void interactAt(Hand hand, Vec3d pos) {
+                    // N/A
+                }
 
-                    @Override
-                    public void attack() {
-                        EntityHitResult entityHitResult;
-                        Entity entity;
-                        HitResult hitResult = mc.crosshairTarget;
-                        if (hitResult == null) {
+                @Override
+                public void attack() {
+                    EntityHitResult entityHitResult;
+                    Entity entity;
+                    HitResult hitResult = mc.crosshairTarget;
+                    if (hitResult == null) {
+                        return;
+                    }
+                    if (hitResult.getType() == HitResult.Type.ENTITY && (entity = (entityHitResult = (EntityHitResult) hitResult).getEntity()) instanceof EndCrystalEntity) {
+                        StatusEffectInstance weakness = mc.player.getStatusEffect(StatusEffects.WEAKNESS);
+                        StatusEffectInstance strength = mc.player.getStatusEffect(StatusEffects.STRENGTH);
+                        if (!(weakness == null || strength != null && strength.getAmplifier() > weakness.getAmplifier() || isTool(mc.player.getMainHandStack()))) {
                             return;
                         }
-                        if (hitResult.getType() == HitResult.Type.ENTITY && (entity = (entityHitResult = (EntityHitResult) hitResult).getEntity()) instanceof EndCrystalEntity) {
-                            StatusEffectInstance weakness = mc.player.getStatusEffect(StatusEffects.WEAKNESS);
-                            StatusEffectInstance strength = mc.player.getStatusEffect(StatusEffects.STRENGTH);
-                            if (!(weakness == null || strength != null && strength.getAmplifier() > weakness.getAmplifier() || isTool(mc.player.getMainHandStack()))) {
-                                return;
-                            }
-                            entity.kill();
-                            entity.setRemoved(Entity.RemovalReason.KILLED);
-                            entity.onRemoved();
-                        }
+                        entity.kill();
+                        entity.setRemoved(Entity.RemovalReason.KILLED);
+                        entity.onRemoved();
                     }
-                });
+                }
+            });
 
 
-            }
         }
     }
 
     @EventTarget
     private void onPacketSend(PlayerAttackEntityEvent e) {
+        if (!client.isEnabled()) return;
         final Entity ent = e.getEntity();
 
         if (ent == null) return;
